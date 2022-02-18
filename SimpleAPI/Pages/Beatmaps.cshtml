@@ -1,0 +1,15 @@
+﻿@page
+@model SimpleAPI.Pages.Beatmaps
+
+@{
+    Layout = null;
+}
+
+<title>Beatmap Listing</title>
+
+@foreach (var beatmap in Model.OsuBeatmaps)
+{
+    <h2>@beatmap.SongArtist - @beatmap.SongName</h2>
+    <h2>Mapped by @beatmap.Mapper</h2>
+    <a href="@beatmap.Link">Download</a>
+}
