@@ -8,20 +8,18 @@ namespace SimpleAPI.Pages
 {
     public class Beatmaps : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-        public readonly BeatmapService _beatmapService;
+        public readonly BeatmapService BeatmapService;
         public IEnumerable<OsuBeatmap> OsuBeatmaps { get; private set; }
 
         public Beatmaps(ILogger<IndexModel> logger, BeatmapService beatmapService)
         {
-            _logger = logger;
-            _beatmapService = beatmapService;
+            BeatmapService = beatmapService;
         }
         
         public void OnGet()
         {
             
-            OsuBeatmaps = _beatmapService.GetBeatmaps();
+            OsuBeatmaps = BeatmapService.GetBeatmaps();
         }
     }
 }
